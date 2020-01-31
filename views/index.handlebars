@@ -1,8 +1,39 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">EAT DA BURGER</h1>
+</div>
+
+<form action="/" method = "POST">
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">What burger would you like to create?</label>
+    <input type="question" class="form-control" name="burger">
+        <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+{{!-- {{#if cond1}}
+    true
+{{else}}
+    false
+{{/if}} --}}
+
 <ul>
     {{#each burgersdata}}
+
+    {{#unless devoured}}
     <li>
-        <h2> BurgerName: {{burger_name}}</h2>
+        <p>{{id}}. {{burger_name}}</p>
     </li>
-   {{!-- <a href="/questions/{{id}}" class ="btn btn-outline-warning">Answer</a> --}}
+   <a href="" class ="btn btn-outline-warning">Devour It!</a>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each burgersdata}}
+    {{#if devoured}}
+    <li>
+        <p>{{id}}. {{burger_name}}</p>
+    </li>
+    {{/if}}
     {{/each}}
 </ul>

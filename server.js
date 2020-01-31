@@ -33,23 +33,39 @@ var connection = mysql.createConnection({
 
 app.get("/", (req,res) =>{
 
-
   connection.query("SELECT * FROM burgers", function(err, response){
 
-    if (err) throw err
-
-    console.log(response);
-
-    var data = {
-        burgersdata: [...response]}
+    if (err) throw err;
+    var data = { burgersdata: [...response]};
 
     res.render("index", data);
+  });
+});
 
-  })
 
-    
+app.post("/", (req, res)=>{
+
+    var input = req.body.burger;
+
+    connection.query("INSERT INTO burgers(burger_name) VALUES(?)",[input], (err, result)=>{
+
+        if (err) throw err;
+        res.redirect("/")
+
+    });
+});
+
+app.post("/api/devour:id", (req, res)=>{
+
+    var input = req.params.id;
+
+    connection.query("UPDATE burgers SET devoured WHERE ?", [input], (err, result)=>{
+
+        if (err) throw err;
+        
+        console.log(input)
+    })
 })
-
   app.listen(PORT, ()=>{
       console.log(`connected to PORT ${PORT}`);
   })
