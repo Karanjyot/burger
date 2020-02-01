@@ -1,5 +1,5 @@
 
-<div class="jumbotron">
+<div class="jumbotron jumbo">
   <h1 class="display-4">EAT DA BURGER</h1>
 </div>
 <div class ="row">
@@ -12,10 +12,11 @@
     {{#unless devoured}}
     <div id="readyToDevour" class="card" style="width: 18rem;">
             <div class="card-body">
-   
-        <p>{{id}}. {{burger_name}}</p>
+   <h5 class="card-title"><span class="badge badge-primary badge-pill">{{id}}</span> {{burger_name}}</h5>
+
     
-   <a href="" data-id={{id}} class ="btn btn-outline-warning devourBtn">Devour It!</a>
+    
+   <a href="" data-id={{id}} class ="btn btn-primary devourBtn">Devour It!</a>
   </div>
 </div>
 
@@ -26,7 +27,7 @@
 
 {{!-- Input to create burger --}}
 <div class ="col-sm">
-    <div class="card" style="width: 18rem;">
+    <div class="card formCard" style="width: 18rem;">
 <div class="card-body">
     <form>
 <div class="form-group">
@@ -46,9 +47,10 @@
     {{#each burgersdata}}
     <div id="devoured" class="card" style="width: 18rem;">
     {{#if devoured}}
+
     <div class="card-body">
-  
-        <p>{{id}}. {{burger_name}}</p>
+     <h5 class="card-title"><span class="badge badge-primary badge-pill">{{id}}</span> {{burger_name}}</h5>
+       
     
     </div>
     {{/if}}

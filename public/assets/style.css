@@ -1,4 +1,44 @@
-#devoured {
+body {
 
-    /* background-color: blue; */
+    background-image: url("burger.jpeg");
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+
+#readyToDevour{
+
+    background-color: #EBF712;
+}
+
+.formCard{
+
+    background-color: #EBF712;
+}
+
+#devoured{
+
+    background-color: #EBF712;
+
+}
+
+.createBTN{
+    margin-top: 20px;
+    margin-left: 75px;
+    
+}
+
+.jumbotron{
+    background-image: url("burger2.png");
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    text-align: center;
+    color: white;
+   
+}
+
+.display-4 {
+
+    font-weight: 600;
 }
