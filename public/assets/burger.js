@@ -13,3 +13,22 @@ $(".devourBtn").click(function(e){
         }   
     );
 });
+
+
+
+$(".createBTN").click(function(e){
+
+    // e.preventDefault();
+    console.log("hello");
+
+    var burger = {burger: $(".burgerInput").val().trim()}
+
+    $.ajax({
+        type: "POST",
+        url: "/",
+        data: burger
+        }   
+    );
+});
+
+

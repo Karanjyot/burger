@@ -2,38 +2,58 @@
 <div class="jumbotron">
   <h1 class="display-4">EAT DA BURGER</h1>
 </div>
+<div class ="row">
 
-<form action="/" method = "POST">
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">What burger would you like to create?</label>
-    <input type="question" class="form-control" name="burger">
-        <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-  </form>
-{{!-- {{#if cond1}}
-    true
-{{else}}
-    false
-{{/if}} --}}
+    {{!-- Burgers that have been created  --}}
+    <div class="col-sm">
 
-<ul>
     {{#each burgersdata}}
 
     {{#unless devoured}}
-    <li >
+    <div id="readyToDevour" class="card" style="width: 18rem;">
+            <div class="card-body">
+   
         <p>{{id}}. {{burger_name}}</p>
-    </li>
+    
    <a href="" data-id={{id}} class ="btn btn-outline-warning devourBtn">Devour It!</a>
+  </div>
+</div>
+
     {{/unless}}
     {{/each}}
-</ul>
 
-<ul>
+</div>
+
+{{!-- Input to create burger --}}
+<div class ="col-sm">
+    <div class="card" style="width: 18rem;">
+<div class="card-body">
+    <form>
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">What burger would you like to create?</label>
+    <input type="question" class="form-control burgerInput">
+        <button type="submit" class="btn btn-primary createBTN">Create!</button>
+  </div>
+  </form>
+</div>
+  </div>
+</div>
+
+{{!-- Burgers that have been devoured --}}
+<div class ="col-sm">
+     
+
     {{#each burgersdata}}
+    <div id="devoured" class="card" style="width: 18rem;">
     {{#if devoured}}
-    <li>
+    <div class="card-body">
+  
         <p>{{id}}. {{burger_name}}</p>
-    </li>
+    
+    </div>
     {{/if}}
     {{/each}}
-</ul>
+
+</div>
+</div>
+</div>
