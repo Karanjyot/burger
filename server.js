@@ -12,6 +12,8 @@ app.set("view engine", "handlebars");
 
 var PORT = process.env.PORT || 8080;
 
+app.use(express.static("public"));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -55,16 +57,18 @@ app.post("/", (req, res)=>{
     });
 });
 
-app.post("/api/devour:id", (req, res)=>{
+app.post("/api/devour", (req, res)=>{
 
-    var input = req.params.id;
-
-    connection.query("UPDATE burgers SET devoured WHERE ?", [input], (err, result)=>{
+      
+    connection.query("UPDATE burgers SET devoured = 1 WHERE id=?", [req.body.id], (err, result)=>{
 
         if (err) throw err;
+
+        // res.redirect("/")
         
-        console.log(input)
     })
+
+    
 })
   app.listen(PORT, ()=>{
       console.log(`connected to PORT ${PORT}`);

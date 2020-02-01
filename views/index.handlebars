@@ -20,10 +20,10 @@
     {{#each burgersdata}}
 
     {{#unless devoured}}
-    <li>
+    <li >
         <p>{{id}}. {{burger_name}}</p>
     </li>
-   <a href="" class ="btn btn-outline-warning">Devour It!</a>
+   <a href="" data-id={{id}} class ="btn btn-outline-warning devourBtn">Devour It!</a>
     {{/unless}}
     {{/each}}
 </ul>
